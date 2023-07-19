@@ -34,3 +34,5 @@ reports/*
 /bin/
 file/chromedriver.exe
 file/LICENSE.chromedriver
+file/chromedriver/chromedriver.exe
+file/chromedriver/LICENSE.chromedriver
