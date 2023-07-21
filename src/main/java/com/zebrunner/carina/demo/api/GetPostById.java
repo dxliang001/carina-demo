@@ -17,4 +17,5 @@ public class GetPostById extends AbstractApiMethodV2 {
         replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url_dummyrestapi"));
         replaceUrlPlaceholder("id", id);
     }
+
 }
