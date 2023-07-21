@@ -14,7 +14,7 @@ import com.zebrunner.carina.utils.config.Configuration;
 public class CreateEmployee extends AbstractApiMethodV2 {
 
     public CreateEmployee(String requestBody) {
-        replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url_dummyrestapi"));
+        replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url_dummyapi"));
         setRequestBody(requestBody);
     }
 }
