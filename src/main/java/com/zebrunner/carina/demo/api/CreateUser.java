@@ -1,4 +1,4 @@
-package com.myapi.tests;
+package com.zebrunner.carina.demo.api;
 
 import com.zebrunner.carina.api.AbstractApiMethodV2;
 import com.zebrunner.carina.api.annotation.Endpoint;
@@ -16,7 +16,7 @@ import com.zebrunner.carina.utils.config.Configuration;
 public class CreateUser extends AbstractApiMethodV2 {
 
     public CreateUser() {
-        super("api/user/_post/rq.json", "api/user/_post/rs.json", "api/user/user.properties");
+        super("api/users/_post/rq.json", "api/users/_post/rs.json", "api/users/user.properties");
         replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url_dummyapi"));
     }
 }
