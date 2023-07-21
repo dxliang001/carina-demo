@@ -22,7 +22,7 @@ public class DummyApiTest implements IAbstractTest {
         GetEmployeesMethod getEmployeesMethod = new GetEmployeesMethod();
         getEmployeesMethod.callAPIExpectSuccess();
         getEmployeesMethod.validateResponse();
-        Thread.sleep(5000);
+        Thread.sleep(20000);
     }
 
     @Test()
@@ -32,7 +32,7 @@ public class DummyApiTest implements IAbstractTest {
         postEmployeeMethod.setProperties("api/employees/employee.properties");
         postEmployeeMethod.callAPIExpectSuccess();
         postEmployeeMethod.validateResponse();
-        Thread.sleep(10000);
+        Thread.sleep(20000);
     }
 
     @Test()
@@ -41,6 +41,7 @@ public class DummyApiTest implements IAbstractTest {
         DeleteEmployeeMethod deleteEmployeeMethod = new DeleteEmployeeMethod();
         deleteEmployeeMethod.callAPIExpectSuccess();
         deleteEmployeeMethod.validateResponse();
-        Thread.sleep(15000);
+        Thread.sleep(20000);
     }
+
 }
