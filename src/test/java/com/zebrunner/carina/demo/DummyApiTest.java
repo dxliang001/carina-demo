@@ -16,14 +16,14 @@ public class DummyApiTest implements IAbstractTest {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-//    @Test()
-//    @MethodOwner(owner = "dxliang")
-//    public void testGetEmployees() throws InterruptedException {
-//        GetEmployeesMethod getEmployeesMethod = new GetEmployeesMethod();
-//        getEmployeesMethod.callAPIExpectSuccess();
-//        getEmployeesMethod.validateResponse();
-//        Thread.sleep(5000);
-//    }
+    @Test()
+    @MethodOwner(owner = "dxliang")
+    public void testGetEmployees() throws InterruptedException {
+        GetEmployeesMethod getEmployeesMethod = new GetEmployeesMethod();
+        getEmployeesMethod.callAPIExpectSuccess();
+        getEmployeesMethod.validateResponse();
+        Thread.sleep(5000);
+    }
 
     @Test()
     @MethodOwner(owner = "dxliang")
@@ -35,12 +35,12 @@ public class DummyApiTest implements IAbstractTest {
         Thread.sleep(10000);
     }
 
-//    @Test()
-//    @MethodOwner(owner = "dxliang")
-//    public void testDeleteEmployee() throws InterruptedException {
-//        DeleteEmployeeMethod deleteEmployeeMethod = new DeleteEmployeeMethod();
-//        deleteEmployeeMethod.callAPIExpectSuccess();
-//        deleteEmployeeMethod.validateResponse();
-//        Thread.sleep(15000);
-//    }
+    @Test()
+    @MethodOwner(owner = "dxliang")
+    public void testDeleteEmployee() throws InterruptedException {
+        DeleteEmployeeMethod deleteEmployeeMethod = new DeleteEmployeeMethod();
+        deleteEmployeeMethod.callAPIExpectSuccess();
+        deleteEmployeeMethod.validateResponse();
+        Thread.sleep(15000);
+    }
 }

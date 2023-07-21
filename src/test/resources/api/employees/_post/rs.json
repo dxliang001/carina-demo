@@ -1,6 +1,10 @@
 {
-  "name": "John Doe",
-  "salary": "12345",
-  "age": "25",
-  "id": "1"
+  "status": "success",
+  "data": {
+    "name": "John Doe",
+    "salary": "12345",
+    "age": "25",
+    "id": "number"
+  },
+  "message": "Successfully! Record has been added."
 }

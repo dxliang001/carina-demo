@@ -1,4 +1,5 @@
 {
-  "status": "success",
-  "message": "Successfully! Record has been deleted"
+  "name": "John Doe",
+  "salary": "12345",
+  "age": "25"
 }
