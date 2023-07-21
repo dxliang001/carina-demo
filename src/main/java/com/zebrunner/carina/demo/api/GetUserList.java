@@ -8,15 +8,12 @@ import com.zebrunner.carina.api.http.HttpMethodType;
 import com.zebrunner.carina.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.utils.config.Configuration;
 
-@Endpoint(url = "${base_url}/posts/{id}", methodType = HttpMethodType.GET)
-@ResponseTemplatePath(path = "api/posts/_get/rs.json")
+@Endpoint(url = "${base_url}/user", methodType = HttpMethodType.GET)
+@ResponseTemplatePath(path = "api/user/_get/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
-public class GetPostById extends AbstractApiMethodV2 {
-
-    public GetPostById(String id) {
-        replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url_jsonplaceholder"));
-        replaceUrlPlaceholder("id", id);
+public class GetUserList extends AbstractApiMethodV2 {
+    public GetUserList() {
+        replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url_dummyapi"));
+        addProperty("app-id", "0JyYiOQXQQr5H9OEn21312"); // replace <your-app-id> with your actual app id
     }
-
-
 }

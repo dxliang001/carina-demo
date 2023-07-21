@@ -3,8 +3,8 @@ package com.zebrunner.carina.demo.dummyapi;
 
 import com.zebrunner.carina.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.demo.api.CreateEmployee;
-import com.zebrunner.carina.demo.api.GetPostById;
 import com.zebrunner.carina.demo.api.GetUserById;
+import com.zebrunner.carina.demo.api.GetUserList;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -20,10 +20,10 @@ public class ApiTests {
     }
 
     @Test
-    public void testGetPostById() {
-        GetPostById getPostById = new GetPostById("1");
-        getPostById.expectResponseStatus(HttpResponseStatusType.OK_200);
-        String rs = getPostById.callAPI().asString();
+    public void testGetUserList() {
+        GetUserList getUserList = new GetUserList();
+        getUserList.expectResponseStatus(HttpResponseStatusType.OK_200);
+        String rs = getUserList.callAPI().asString();
         Assert.assertNotNull(rs, "The response is null!");
     }
 
@@ -34,4 +34,6 @@ public class ApiTests {
         String rs = getUserById.callAPI().asString();
         Assert.assertNotNull(rs, "The response is null!");
     }
+
+
 }
