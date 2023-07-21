@@ -3,7 +3,8 @@ package com.zebrunner.carina.demo.dummyapi;
 
 import com.zebrunner.carina.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.demo.api.CreateEmployee;
-import com.zebrunner.carina.demo.api.GetUserById;
+
+import com.zebrunner.carina.demo.api.DeleteUserById;
 import com.zebrunner.carina.demo.api.GetUserList;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -28,12 +29,12 @@ public class ApiTests {
     }
 
     @Test
-    public void testGetUserById() {
-        GetUserById getUserById = new GetUserById("1");
-        getUserById.expectResponseStatus(HttpResponseStatusType.OK_200);
-        String rs = getUserById.callAPI().asString();
+    public void testDeleteUserById() {
+        String userId = "123";
+        DeleteUserById deleteUserById = new DeleteUserById(userId);
+        deleteUserById.expectResponseStatus(HttpResponseStatusType.OK_200);
+        String rs = deleteUserById.callAPI().asString();
         Assert.assertNotNull(rs, "The response is null!");
     }
-
 
 }
