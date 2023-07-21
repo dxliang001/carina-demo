@@ -1,4 +1,4 @@
-package com.myapi.tests;
+package com.zebrunner.carina.demo.api;
 
 import com.zebrunner.carina.api.AbstractApiMethodV2;
 import com.zebrunner.carina.api.annotation.Endpoint;
@@ -14,8 +14,9 @@ import com.zebrunner.carina.utils.config.Configuration;
 public class GetPostById extends AbstractApiMethodV2 {
 
     public GetPostById(String id) {
-        replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url_dummyrestapi"));
+        replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url_jsonplaceholder"));
         replaceUrlPlaceholder("id", id);
     }
+
 
 }
