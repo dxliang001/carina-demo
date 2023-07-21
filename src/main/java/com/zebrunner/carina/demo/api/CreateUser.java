@@ -16,7 +16,7 @@ import com.zebrunner.carina.utils.config.Configuration;
 public class CreateUser extends AbstractApiMethodV2 {
 
     public CreateUser() {
-        super("api/user/_post/rq.json", "api/user/_post/rs.json", "api/users/users.properties");
+        super("api/user/_post/rq.json", "api/user/_post/rs.json", "api/user/users.properties");
         replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url_dummyapi"));
     }
 }
