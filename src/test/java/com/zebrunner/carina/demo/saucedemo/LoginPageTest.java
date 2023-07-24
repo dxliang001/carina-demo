@@ -21,7 +21,7 @@ public class LoginPageTest implements IAbstractTest {
     @Test
     @MethodOwner(owner = "dxl")
     @TestLabel(name = "1. empty input", value = {"web"})
-    public void emptyInput() {
+    public void emptyUsernameInput() {
         loginPage.open();
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(loginPage.isPageOpened(), "Login Page Fail to opened");
