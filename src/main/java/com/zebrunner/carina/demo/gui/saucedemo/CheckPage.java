@@ -2,6 +2,7 @@ package com.zebrunner.carina.demo.gui.saucedemo;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
@@ -36,6 +37,12 @@ public class CheckPage extends AbstractPage {
         return itemPriceList.stream().map(ExtendedWebElement::getText).collect(Collectors.toList());
     }
 
+
+    public void clickAddToCartButton(String itemId) {
+        String buttonId = "add-to-cart-" + itemId;
+        ExtendedWebElement addToCartButton = findExtendedWebElement(By.id(buttonId));
+        addToCartButton.click();
+    }
 
     public CheckPage(WebDriver driver) {
         super(driver);
