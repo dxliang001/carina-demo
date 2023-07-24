@@ -1,4 +1,4 @@
-package com.zebrunner.carina.demo.gui.saucedemo.pages;
+package com.zebrunner.carina.demo.gui.saucedemo;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;

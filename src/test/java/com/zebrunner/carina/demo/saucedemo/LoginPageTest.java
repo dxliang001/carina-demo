@@ -4,7 +4,7 @@ package com.zebrunner.carina.demo.saucedemo;
 import com.zebrunner.agent.core.annotation.TestLabel;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
-import com.zebrunner.carina.demo.gui.saucedemo.pages.LoginPage;
+import com.zebrunner.carina.demo.gui.saucedemo.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
