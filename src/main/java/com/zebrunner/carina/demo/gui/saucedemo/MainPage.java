@@ -4,12 +4,13 @@ import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
 public class MainPage extends AbstractPage {
-    int count = 6;
+    private WebDriver driver;
 
     @FindBy(id = "react-burger-menu-btn")
     private ExtendedWebElement menuButton;
@@ -59,5 +60,52 @@ public class MainPage extends AbstractPage {
     public String getItemPrice(int itemIndex) {
         ExtendedWebElement itemPriceElement = inventoryItems.get(itemIndex).findExtendedWebElement(By.className("inventory_item_price"));
         return itemPriceElement.getText();
+    }
+
+
+    public void clickAddToCartButton(String itemId) {
+        WebElement addToCartButton = driver.findElement(By.id("add-to-cart-" + itemId));
+        addToCartButton.click();
+    }
+
+    public boolean isItemInCart(String itemId) {
+        WebElement cartItem = driver.findElement(By.id("cart-" + itemId));
+        return cartItem != null;
+    }
+
+    public boolean isProductCardDisplayed(String itemId) {
+        WebElement productCard = driver.findElement(By.id("product-card-" + itemId));
+        return productCard != null;
+    }
+
+    public void searchForItem(String itemName) {
+        WebElement searchBox = driver.findElement(By.id("search-box"));
+        searchBox.sendKeys(itemName);
+        searchBox.submit();
+    }
+
+    public boolean isItemDisplayedInSearchResults(String itemName) {
+        WebElement searchResult = driver.findElement(By.xpath("//div[contains(text(), '" + itemName + "')]"));
+        return searchResult != null;
+    }
+
+    public void openAllItemsPage() {
+        WebElement allItemsLink = driver.findElement(By.id("all-items-link"));
+        allItemsLink.click();
+    }
+
+    public boolean isAllItemsPageDisplayed() {
+        WebElement allItemsPage = driver.findElement(By.id("all-items-page"));
+        return allItemsPage != null;
+    }
+
+    public void openAboutPage() {
+        WebElement aboutLink = driver.findElement(By.id("about-link"));
+        aboutLink.click();
+    }
+
+    public boolean isAboutPageDisplayed() {
+        WebElement aboutPage = driver.findElement(By.id("about-page"));
+        return aboutPage != null;
     }
 }
