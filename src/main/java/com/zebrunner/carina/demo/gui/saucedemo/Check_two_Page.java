@@ -5,7 +5,7 @@ import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-public class CheckPage2 extends AbstractPage {
+public class Check_two_Page extends AbstractPage {
 
     @FindBy(id = "first-name")
     private ExtendedWebElement firstNameInput;
@@ -22,7 +22,7 @@ public class CheckPage2 extends AbstractPage {
     @FindBy(id = "continue")
     private ExtendedWebElement continueButton;
 
-    public CheckPage2(WebDriver driver) {
+    public Check_two_Page(WebDriver driver) {
         super(driver);
     }
 

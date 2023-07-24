@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class CheckFinalPage {
+public class Check_Complete_Page {
 
     private WebDriver driver;
 
@@ -13,7 +13,7 @@ public class CheckFinalPage {
     private By completeText = By.className("complete-text");
     private By backButton = By.id("back-to-products");
 
-    public CheckFinalPage(WebDriver driver) {
+    public Check_Complete_Page(WebDriver driver) {
         this.driver = driver;
     }
 

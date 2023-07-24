@@ -3,28 +3,49 @@ package com.zebrunner.carina.demo.gui.saucedemo;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class CartPage extends AbstractPage {
 
-    @FindBy(xpath = "//*[@id=\"cart_contents_container\"]/div/div[1]/div[3]/div[2]/div[2]/div")
-    private ExtendedWebElement backpackPriceLabel;
+    @FindBy(xpath = "//div[@class=\"cart_item\"]//div[@class=\"inventory_item_name\"]")
+    private List<ExtendedWebElement> itemList;
 
-    @FindBy(xpath = "//*[@id=\"item_4_title_link\"]")
-    private ExtendedWebElement backpackNameLabel;
+    @FindBy(xpath = "//div[@class=\"cart_item\"]//div[@class=\"inventory_item_price\"]")
+    private List<ExtendedWebElement> itemPriceList;
+
+    @FindBy(xpath = "//div[@class=\"summary_total_label\"]")
+    private ExtendedWebElement totalPrice;
+
+    @FindBy(id = "cancel")
+    private ExtendedWebElement cancelButton;
+
+    @FindBy(id = "finish")
+    private ExtendedWebElement finishButton;
 
     public CartPage(WebDriver driver) {
         super(driver);
     }
 
-    public String getBackpackPrice() {
-        return backpackPriceLabel.getText();
+    public List<String> getItemNames() {
+        return itemList.stream().map(ExtendedWebElement::getText).collect(Collectors.toList());
     }
 
-    public String getBackpackName() {
-        return backpackNameLabel.getText();
+    public List<String> getItemPrices() {
+        return itemPriceList.stream().map(ExtendedWebElement::getText).collect(Collectors.toList());
     }
 
+    public String getTotalPrice() {
+        return totalPrice.getText();
+    }
+
+    public void clickCancel() {
+        cancelButton.click();
+    }
+
+    public void clickFinish() {
+        finishButton.click();
+    }
 }
