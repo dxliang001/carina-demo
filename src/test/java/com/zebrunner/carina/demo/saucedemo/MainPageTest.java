@@ -12,7 +12,6 @@ import org.testng.asserts.SoftAssert;
 public class MainPageTest implements IAbstractTest {
     LoginPage loginPage;
     MainPage mainPage;
-
     CartPage cartPage;
     CheckPage checkPage;
     Check_two_Page check_two_page;
