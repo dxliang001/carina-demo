@@ -32,6 +32,7 @@ public class MainPageTest implements IAbstractTest {
     @TestLabel(name = "1. add item to cart and check cart change", value = {"web"})
     public void testCartValidation() {
         loginPage.open();
+
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(loginPage.isPageOpened(), "Login Page Fail to opened");
         loginPage.inputLogin("standard_user");
@@ -44,7 +45,7 @@ public class MainPageTest implements IAbstractTest {
 
     @Test(dependsOnMethods = "testCartValidation")
     @MethodOwner(owner = "dxl")
-    @TestLabel(name = "2. test product card", value = {"web"})
+    @TestLabel(name = "2. test product card display correctly", value = {"web"})
     public void testProductCard() {
         Assert.assertTrue(mainPage.isInventoryListPresent(), "Inventory list is not present or empty");
     }

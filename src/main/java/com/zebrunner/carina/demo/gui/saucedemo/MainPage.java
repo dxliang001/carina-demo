@@ -128,7 +128,7 @@ public class MainPage extends AbstractPage {
             itemNames.add(itemNameElement.getText());
 
             ExtendedWebElement itemPriceElement = item.findExtendedWebElement(By.className("inventory_item_price"));
-            itemPrices.add(Double.parseDouble(itemPriceElement.getText().substring(1))); // remove the $ sign and parse to double
+            itemPrices.add(Double.parseDouble(itemPriceElement.getText().substring(1)));
         }
 
         if (optionValue.equals("az") || optionValue.equals("za")) {

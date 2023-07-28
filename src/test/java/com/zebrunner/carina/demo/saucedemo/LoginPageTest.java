@@ -49,7 +49,7 @@ public class LoginPageTest implements IAbstractTest {
     @Test
     @MethodOwner(owner = "dxl")
     @TestLabel(name = "2. valid Password", value = {"web"})
-    public void ValidPassword() {
+    public void validPassword() {
         loginPage.open();
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(loginPage.isPageOpened(), "Login Page Fail to opened");
