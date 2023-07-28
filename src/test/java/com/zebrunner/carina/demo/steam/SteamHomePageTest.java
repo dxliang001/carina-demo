@@ -40,6 +40,7 @@ public class SteamHomePageTest implements IAbstractTest {
 
         WebElement aboutSubtitle = getDriver().findElement(By.className("about_subtitle"));
         softAssert.assertNotNull(aboutSubtitle, "Subtitle is not present on the page");
+        steamHomePage.clickInstallButton();
         softAssert.assertAll();
     }
 

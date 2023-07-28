@@ -26,10 +26,14 @@ public class HomePage extends AbstractPage {
     private WebElement languageOptions;
 
     @FindBy(id = "tab_topsellers_content_trigger")
+    //@FindBy(xpath = "(//div[@id='tab_topsellers_content']")
     private WebElement topSellersTab;
 
     @FindBy(xpath = "(//div[@id='tab_topsellers_content']//a[contains(@class, 'tab_item')])[1]")
     private WebElement firstTopSeller;
+
+    @FindBy(xpath = ("//div[@class='about_install_wrapper']"))
+    private WebElement InstallButton;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -72,4 +76,6 @@ public class HomePage extends AbstractPage {
     public void clickFirstTopSeller() {
         firstTopSeller.click();
     }
+
+    public void clickInstallButton(){ InstallButton.click();}
 }
