@@ -1,12 +1,10 @@
 package com.zebrunner.carina.demo.mobileApp;
 
+import com.zebrunner.agent.core.annotation.TestLabel;
 import com.zebrunner.carina.core.IAbstractTest;
+import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.demo.mobile.gui.pages.mobile.CalculatorPageBase;
 import com.zebrunner.carina.utils.mobile.IMobileUtils;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.devtools.v85.emulation.model.ScreenOrientation;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -14,7 +12,10 @@ import org.testng.annotations.Test;
 public class MobileAppTest implements IAbstractTest, IMobileUtils {
 
 
-    @Test(description = "Test Addition and Subtraction")
+
+    @Test
+    @MethodOwner(owner = "dxl")
+    @TestLabel(name = "1. Test Addition and Subtraction", value = {"mobile"})
     public void testAdditionAndSubtraction() throws InterruptedException {
         CalculatorPageBase calculator = initPage(getDriver(), CalculatorPageBase.class);
 
@@ -30,8 +31,7 @@ public class MobileAppTest implements IAbstractTest, IMobileUtils {
         calculator.clickSixButton();
         calculator.clickEqButton();
         Assert.assertEquals(calculator.getResultElement().getText(), "11");
-
-
+        
         // Performing (9 - 5) - 1
         calculator.clickParenthesisButton();
         calculator.clickNineButton();
@@ -44,7 +44,9 @@ public class MobileAppTest implements IAbstractTest, IMobileUtils {
         Assert.assertEquals(calculator.getResultElement().getText(), "3");
     }
 
-    @Test(description = "Test Multiplication and Division")
+    @Test
+    @MethodOwner(owner = "dxl")
+    @TestLabel(name = "2. Test Multiplication and Division", value = {"mobile"})
     public void testMultiplicationAndDivision() throws InterruptedException {
         CalculatorPageBase calculator = initPage(getDriver(), CalculatorPageBase.class);
         Assert.assertTrue(calculator.isPageOpened(), "Calculator app has not launched successfully.");
@@ -61,7 +63,9 @@ public class MobileAppTest implements IAbstractTest, IMobileUtils {
         Assert.assertEquals(calculator.getResultElement().getText(), "14");
     }
 
-    @Test(description = "Test Sin, Cos, Tan Functions")
+    @Test
+    @MethodOwner(owner = "dxl")
+    @TestLabel(name = "3. Test Sin, Cos, Tan Functions", value = {"mobile"})
     public void testSinCosTanFunctions() throws InterruptedException {
         CalculatorPageBase calculator = initPage(getDriver(), CalculatorPageBase.class);
         Assert.assertTrue(calculator.isPageOpened(), "Calculator app has not launched successfully.");
@@ -100,7 +104,9 @@ public class MobileAppTest implements IAbstractTest, IMobileUtils {
 
     }
 
-    @Test(description = "Test Ln and Log Functions")
+    @Test
+    @MethodOwner(owner = "dxl")
+    @TestLabel(name = "4. Test Ln and Log Functions", value = {"mobile"})
     public void testLnAndLogFunctions() throws InterruptedException {
         CalculatorPageBase calculator = initPage(getDriver(), CalculatorPageBase.class);
         Assert.assertTrue(calculator.isPageOpened(), "Calculator app has not launched successfully.");
