@@ -1,22 +1,20 @@
 package com.zebrunner.carina.demo.mobile.gui.pages.ebay;
 
-import java.io.IOException;
-
+import com.zebrunner.carina.demo.mobile.gui.pages.common.WebViewPageBase;
 import com.zebrunner.carina.demo.mobile.gui.pages.common.WelcomePageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+
 
 @DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = WelcomePageBase.class)
-public class ebayAppPage {
+public class ebayAppPage extends AbstractPage {
 
 
     public ebayAppPage(WebDriver driver) {
-        super();
+        super(driver);
     }
     @FindBy(id = "com.ebay.mobile:id/home_app_onboarding_logo")
     private ExtendedWebElement title;
@@ -39,14 +37,34 @@ public class ebayAppPage {
     @FindBy (xpath="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]")
     private ExtendedWebElement clickFirstIphoneResult;
 
-
+    @FindBy(id= "com.ebay.mobile:id/cta_button_plus")
+    private ExtendedWebElement clickAddtocartButton;
     public void insertTextIntoSearchBar(String text) {
         clickSearchBar.click();
         clickSearchBar.type(text);
     }
 
+    public void clickCloseSignInSection(){
+        closeSignInSection.click();
+    }
+
     public void clickOnFirstSuggestedItem() {
         firstSuggestedItem.click();
+    }
+
+    public void clickOneTB(){
+        chooseCapacity1TB.click();
+    }
+    public void clickOnAddtocartButton(){
+        clickAddtocartButton.click();
+    }
+    public String getFirstPhoneResultName() {
+        clickFirstIphoneResult.click();
+        return clickFirstIphoneResult.getText();
+    }
+
+    public boolean isFirstPhoneResultName(String expectedName) {
+        return expectedName.equals(getFirstPhoneResultName());
     }
 
 }
