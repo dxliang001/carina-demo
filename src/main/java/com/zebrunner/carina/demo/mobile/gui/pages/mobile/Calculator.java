@@ -94,96 +94,102 @@ public class Calculator extends CalculatorPageBase {
     @FindBy(id = "com.google.android.calculator:id/fun_log")
     private ExtendedWebElement logButton;
 
+    @FindBy(id = "com.google.android.calculator:id/const_pi")
+    private ExtendedWebElement PieButton;
 
     @Override
     public boolean isPageOpened() {return acButton.isElementPresent();}
 
-    public ExtendedWebElement getZeroButton() {
-        return zeroButton;
+    public void clickPieButton() { PieButton.click();}
+
+    public void clickAcButton(){ acButton.click();}
+
+    public void clickZeroButton() {
+         zeroButton.click();
     }
-    public ExtendedWebElement getOneButton() {
-        return oneButton;
+    public void clickOneButton() {
+         oneButton.click();
     }
 
-    public ExtendedWebElement getTwoButton() { return twoButton; }
+    public void clickTwoButton() {  twoButton.click(); }
 
-    public ExtendedWebElement getThreeButton() {
-        return threeButton;
+    public void clickThreeButton() {
+         threeButton.click();
     }
 
-    public ExtendedWebElement getFourButton() {
-        return fourButton;
+    public void clickFourButton() {
+         fourButton.click();
     }
 
-    public ExtendedWebElement getFiveButton() {
-        return fiveButton;
+    public void clickFiveButton() {
+         fiveButton.click();
     }
 
-    public ExtendedWebElement getSixButton() {
-        return sixButton;
+    public void clickSixButton() {
+         sixButton.click();
     }
 
-    public ExtendedWebElement getSevenButton() {
-        return sevenButton;
+    public void clickSevenButton() {
+         sevenButton.click();
     }
 
-    public ExtendedWebElement getEightButton() {
-        return eightButton;
+    public void clickEightButton() {
+         eightButton.click();
     }
-    public ExtendedWebElement getNineButton() {
-        return nineButton;
+    public void clickNineButton() {
+         nineButton.click();
     }
-    public ExtendedWebElement getAddButton() {
-        return addButton;
-    }
-
-    public ExtendedWebElement getSubButton() {
-        return subButton;
+    public void clickAddButton() {
+         addButton.click();
     }
 
-    public ExtendedWebElement getDivButton() {
-        return divButton;
+    public void clickSubButton() {
+         subButton.click();
     }
 
-    public ExtendedWebElement getMulButton() {
-        return mulButton;
+    public void clickDivButton() {
+         divButton.click();
+    }
+
+    public void clickMulButton() {
+         mulButton.click();
     }
 
 
-    public ExtendedWebElement getEqButton() {
-        return eqButton;
+    public void clickEqButton() {
+         eqButton.click();
     }
 
-    public ExtendedWebElement getParenthesisButton(){return parenthesisButton;}
+    public void clickParenthesisButton(){ parenthesisButton.click();}
 
     public ExtendedWebElement getResultElement (){ return resultElement;}
-    public ExtendedWebElement getDropdownMenuButton() {
-        return dropdownMenuButton;
+    public void clickDropdownMenuButton() {
+         dropdownMenuButton.click();
     }
 
-    public ExtendedWebElement getRadianButton() {
-        return DEGButton;
+    public void clickRadianButton() {
+         DEGButton.click();
     }
-    public ExtendedWebElement getSinButton() {
-        return sinButton;
+    public void clickSinButton() {
+         sinButton.click();
     }
-    public ExtendedWebElement getCosButton() {
-        return cosButton;
+    public void clickCosButton() {
+         cosButton.click();
     }
-    public ExtendedWebElement getTanButton() {
-        return tanButton;
+    public void clickTanButton() {
+         tanButton.click();
     }
-    public ExtendedWebElement getInvButton() {
-        return INVButton;
+    public void clickInvButton() {
+         INVButton.click();
     }
-    public ExtendedWebElement getEButton() {
-        return eButton;
+    public void clickEButton() {
+         eButton.click();
     }
-    public ExtendedWebElement getLnButton() {
-        return lnButton;
+    public void clickLnButton() {
+         lnButton.click();
     }
-    public ExtendedWebElement getLogButton() {
-        return logButton;
+    public void clickLogButton() {
+         logButton.click();
     }
 
 

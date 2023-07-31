@@ -10,46 +10,50 @@ public abstract class CalculatorPageBase extends AbstractPage {
         super (driver);
     }
 
-    public abstract  ExtendedWebElement getZeroButton();
-    public abstract ExtendedWebElement getOneButton();
-    public abstract ExtendedWebElement getTwoButton();
+    public abstract void clickAcButton();
 
-    public abstract ExtendedWebElement getThreeButton();
+    public abstract void clickPieButton();
 
-    public abstract ExtendedWebElement getFourButton();
+    public abstract void clickZeroButton();
+    public abstract void clickOneButton();
+    public abstract void clickTwoButton();
 
-    public abstract ExtendedWebElement getFiveButton();
+    public abstract void clickThreeButton();
 
-    public abstract ExtendedWebElement getSixButton();
-    public abstract  ExtendedWebElement getSevenButton();
+    public abstract void clickFourButton();
 
-    public abstract ExtendedWebElement getEightButton();
+    public abstract void clickFiveButton();
 
-    public abstract ExtendedWebElement getNineButton();
+    public abstract void clickSixButton();
+    public abstract  void clickSevenButton();
 
-    public abstract ExtendedWebElement getEqButton();
+    public abstract void clickEightButton();
+
+    public abstract void clickNineButton();
+
+    public abstract void clickEqButton();
 
     public abstract ExtendedWebElement getResultElement();
 
-    public abstract ExtendedWebElement getAddButton();
+    public abstract void clickAddButton();
 
-    public abstract ExtendedWebElement getSubButton();
+    public abstract void clickSubButton();
 
-    public abstract ExtendedWebElement getDivButton();
+    public abstract void clickDivButton();
 
-    public abstract ExtendedWebElement getMulButton();
+    public abstract void clickMulButton();
 
-    public abstract ExtendedWebElement getParenthesisButton();
+    public abstract void clickParenthesisButton();
 
-    public abstract ExtendedWebElement getDropdownMenuButton();
-    public abstract ExtendedWebElement getRadianButton();
+    public abstract void clickDropdownMenuButton();
+    public abstract void clickRadianButton();
 
-    public abstract ExtendedWebElement getSinButton();
-    public abstract ExtendedWebElement getCosButton();
-    public abstract ExtendedWebElement getTanButton();
-    public abstract ExtendedWebElement getInvButton();
+    public abstract void clickSinButton();
+    public abstract void clickCosButton();
+    public abstract void clickTanButton();
+    public abstract void clickInvButton();
 
-    public abstract ExtendedWebElement getEButton();
-    public abstract ExtendedWebElement getLnButton();
-    public abstract ExtendedWebElement getLogButton();
+    public abstract void clickEButton();
+    public abstract void clickLnButton();
+    public abstract void clickLogButton();
 }
