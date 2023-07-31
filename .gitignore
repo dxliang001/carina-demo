@@ -37,3 +37,4 @@ file/LICENSE.chromedriver
 file/chromedriver/chromedriver.exe
 file/chromedriver/LICENSE.chromedriver
 src/main/resources/user.properties
+*.properties
