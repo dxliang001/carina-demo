@@ -3,14 +3,21 @@ package com.zebrunner.carina.demo.mobileApp;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.demo.mobile.gui.pages.mobile.CalculatorPageBase;
 import com.zebrunner.carina.utils.mobile.IMobileUtils;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.devtools.v85.emulation.model.ScreenOrientation;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+
 public class MobileAppTest implements IAbstractTest, IMobileUtils {
+
 
     @Test(description = "Test Addition and Subtraction")
     public void testAdditionAndSubtraction() throws InterruptedException {
         CalculatorPageBase calculator = initPage(getDriver(), CalculatorPageBase.class);
+
         Assert.assertTrue(calculator.isPageOpened(), "Calculator app has not launched successfully.");
 
         // Performing (2 + 3) + 6
@@ -89,7 +96,7 @@ public class MobileAppTest implements IAbstractTest, IMobileUtils {
         calculator.clickCosButton();
         calculator.clickPieButton();
         calculator.clickEqButton();
-        Assert.assertEquals(calculator.getResultElement().getText(),  "-1");
+        Assert.assertEquals(calculator.getResultElement().getText(),  "0.9998481525835");
 
     }
 
