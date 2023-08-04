@@ -13,6 +13,8 @@ public class Calculator extends CalculatorPageBase {
     }
 
     @FindBy(id = "com.google.android.calculator:id/main_calculator")
+    private ExtendedWebElement AppInterface;
+    @FindBy(id = "com.google.android.calculator:id/clr")
     private ExtendedWebElement acButton;
 
     @FindBy(id = "com.google.android.calculator:id/digit_0")
@@ -97,9 +99,41 @@ public class Calculator extends CalculatorPageBase {
     @FindBy(id = "com.google.android.calculator:id/const_pi")
     private ExtendedWebElement PieButton;
 
-    @Override
-    public boolean isPageOpened() {return acButton.isElementPresent();}
+    @FindBy(id = "com.google.android.calculator:id/result_preview")
+    private ExtendedWebElement result_preview;
 
+    @FindBy(id = "com.google.android.calculator:id/op_sqrt")
+    private ExtendedWebElement sqr_rootButton;
+
+    @FindBy(id = "com.google.android.calculator:id/op_pow")
+    private ExtendedWebElement powerButton;
+
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView")
+    private ExtendedWebElement choosethememButton;
+
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v7.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[2]")
+    private ExtendedWebElement DarkthemeButton;
+
+    @FindBy(xpath = "//android.widget.ImageView[@content-desc=\"More options\"]")
+    private ExtendedWebElement MoreoptionMenu;
+
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v7.widget.LinearLayoutCompat/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]")
+    private ExtendedWebElement OkButton;
+
+    @Override
+    public boolean isPageOpened() {return AppInterface.isElementPresent();}
+
+
+    public void clickOkButton(){OkButton.click();}
+    public void clickMoreoption(){MoreoptionMenu.click();}
+
+    public void clickTheme(){choosethememButton.click();}
+
+    public void clickDark(){DarkthemeButton.click();}
+    public void click_sqrrootButton(){sqr_rootButton.click();}
+
+    public void clickPowButton(){powerButton.click();}
+    public ExtendedWebElement getResult_prev(){return result_preview;}
     public void clickPieButton() { PieButton.click();}
 
     public void clickAcButton(){ acButton.click();}

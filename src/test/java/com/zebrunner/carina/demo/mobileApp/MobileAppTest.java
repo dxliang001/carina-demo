@@ -77,30 +77,38 @@ public class MobileAppTest implements IAbstractTest, IMobileUtils {
         // Performing sin(1)
         calculator.clickSinButton();
         calculator.clickOneButton();
+        Assert.assertEquals(calculator.getResult_prev().getText(), "0.8414709848078");
+        calculator.clickRadianButton();
         calculator.clickEqButton();
-        Assert.assertEquals(calculator.getResultElement().getText(), "0.8414709848078");
+        Assert.assertEquals(calculator.getResultElement().getText(), "0.0174524064372");
 
         // Performing cos(1)
+        calculator.clickAcButton();
         calculator.clickCosButton();
         calculator.clickOneButton();
+        Assert.assertEquals(calculator.getResult_prev().getText(), "0.9998476951563");
+        calculator.clickRadianButton();
         calculator.clickEqButton();
         Assert.assertEquals(calculator.getResultElement().getText(),  "0.5403023058681");
 
         // Performing tan(1)
+        calculator.clickAcButton();
         calculator.clickTanButton();
         calculator.clickOneButton();
-        calculator.clickEqButton();
-        Assert.assertEquals(calculator.getResultElement().getText(),  "1.5574077246549");
-
-
-        //Radian Mode
-        calculator.clickAcButton();
+        Assert.assertEquals(calculator.getResult_prev().getText(),  "1.5574077246549");
         calculator.clickRadianButton();
+        calculator.clickEqButton();
+        Assert.assertEquals(calculator.getResultElement().getText(),  "0.0174550649282");
+
+
+        //Radian Mode Pie
+        calculator.clickTanButton();
+        calculator.clickAcButton();
         // Performing Cos(π)
         calculator.clickCosButton();
         calculator.clickPieButton();
         calculator.clickEqButton();
-        Assert.assertEquals(calculator.getResultElement().getText(),  "0.9998481525835");
+        Assert.assertEquals(calculator.getResultElement().getText(),  "0.9984971498638");
 
     }
 
@@ -124,5 +132,41 @@ public class MobileAppTest implements IAbstractTest, IMobileUtils {
         calculator.clickZeroButton();
         calculator.clickEqButton();
         Assert.assertEquals(calculator.getResultElement().getText(), "1");
+
+        calculator.clickNineButton();
+        calculator.clickPowButton();
+        calculator.clickTwoButton();
+        calculator.clickEqButton();
+        Assert.assertEquals(calculator.getResultElement().getText(), "81");
+
+        calculator.clickEightButton();
+        calculator.clickOneButton();
+        calculator.click_sqrrootButton();
+        calculator.clickEqButton();
+        Assert.assertEquals(calculator.getResult_prev().getText(), "Format error");
+
+
+        calculator.clickAcButton();
+        calculator.click_sqrrootButton();
+        calculator.clickEightButton();
+        calculator.clickOneButton();
+        calculator.clickEqButton();
+        Assert.assertEquals(calculator.getResultElement().getText(), "9");
+
     }
+
+    @Test
+    @MethodOwner(owner = "dxl")
+    @TestLabel(name = "5. Test application theme color change", value = {"mobile"})
+    public void testThemechange() throws InterruptedException {
+        CalculatorPageBase calculator = initPage(getDriver(), CalculatorPageBase.class);
+        Assert.assertTrue(calculator.isPageOpened(), "Calculator app has not launched successfully.");
+
+        calculator.clickMoreoption();
+        calculator.clickTheme();
+        calculator.clickDark();
+        calculator.clickOkButton();
+    }
+
+
 }

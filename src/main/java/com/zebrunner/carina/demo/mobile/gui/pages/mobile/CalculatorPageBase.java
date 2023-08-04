@@ -35,6 +35,15 @@ public abstract class CalculatorPageBase extends AbstractPage {
 
     public abstract ExtendedWebElement getResultElement();
 
+    public abstract ExtendedWebElement getResult_prev();
+
+    public abstract void click_sqrrootButton();
+
+    public abstract void clickMoreoption();
+    public abstract void clickDark();
+    public abstract void clickTheme();
+    public abstract void clickOkButton();
+    public abstract void clickPowButton();
     public abstract void clickAddButton();
 
     public abstract void clickSubButton();
